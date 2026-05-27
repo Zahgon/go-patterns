@@ -1,7 +1,5 @@
 package behavioral
 
-import "fmt"
-
 // Element defines an interface for accepting visitors.
 type Element interface {
 	Accept(v Visitor)
@@ -13,43 +11,55 @@ type This struct {
 
 // This returns 'This' as a string.
 func (t *This) This() string {
-	return "This"
+	_ = "STUB: not implemented"
+
+	// Accept accepts a visitor.
+	return ""
 }
 
-// Accept accepts a visitor.
 func (t *This) Accept(v Visitor) {
-	v.VisitThis(t)
+	_ = "STUB: not implemented"
+
+	// That defines a struct which is an element.
+	return
 }
 
-// That defines a struct which is an element.
 type That struct {
 }
 
 // That returns 'That' as a string.
 func (t *That) That() string {
-	return "That"
+	_ = "STUB: not implemented"
+
+	// Accept accepts a visitor.
+	return ""
 }
 
-// Accept accepts a visitor.
 func (t *That) Accept(v Visitor) {
-	v.VisitThat(t)
+	_ = "STUB: not implemented"
+
+	// TheOther defines a struct which is an element.
+	return
 }
 
-// TheOther defines a struct which is an element.
 type TheOther struct {
 }
 
 // TheOther returns 'TheOther' as a string.
 func (t *TheOther) TheOther() string {
-	return "TheOther"
+	_ = "STUB: not implemented"
+
+	// Accept accepts a visitor.
+	return ""
 }
 
-// Accept accepts a visitor.
 func (t *TheOther) Accept(v Visitor) {
-	v.VisitTheOther(t)
+	_ = "STUB: not implemented"
+
+	// Visitor defines an interface for visiting this, that and the other.
+	return
 }
 
-// Visitor defines an interface for visiting this, that and the other.
 type Visitor interface {
 	VisitThis(e *This)
 	VisitThat(e *That)
@@ -61,35 +71,23 @@ type UpVisitor struct {
 }
 
 // VisitThis visits this.
-func (v *UpVisitor) VisitThis(e *This) {
-	fmt.Printf("do Up on %v\n", e.This())
-}
+func (v *UpVisitor) VisitThis(e *This) { _ = "STUB: not implemented"; return }
 
 // VisitThat visits that.
-func (v *UpVisitor) VisitThat(e *That) {
-	fmt.Printf("do Up on %v\n", e.That())
-}
+func (v *UpVisitor) VisitThat(e *That) { _ = "STUB: not implemented"; return }
 
 // VisitTheOther visits the other.
-func (v *UpVisitor) VisitTheOther(e *TheOther) {
-	fmt.Printf("do Up on %v\n", e.TheOther())
-}
+func (v *UpVisitor) VisitTheOther(e *TheOther) { _ = "STUB: not implemented"; return }
 
 // DownVisitor defines a down visitor.
 type DownVisitor struct {
 }
 
 // VisitThis visits this.
-func (v *DownVisitor) VisitThis(e *This) {
-	fmt.Printf("do Down on %v\n", e.This())
-}
+func (v *DownVisitor) VisitThis(e *This) { _ = "STUB: not implemented"; return }
 
 // VisitThat visits that.
-func (v *DownVisitor) VisitThat(e *That) {
-	fmt.Printf("do Down on %v\n", e.That())
-}
+func (v *DownVisitor) VisitThat(e *That) { _ = "STUB: not implemented"; return }
 
 // VisitTheOther visits the other.
-func (v *DownVisitor) VisitTheOther(e *TheOther) {
-	fmt.Printf("do Down on %v\n", e.TheOther())
-}
+func (v *DownVisitor) VisitTheOther(e *TheOther) { _ = "STUB: not implemented"; return }

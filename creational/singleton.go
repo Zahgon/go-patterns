@@ -15,9 +15,4 @@ var once sync.Once
 // GetInstance ensures that only a single instance of the
 // struct singleton gets created and provides a global point
 // to access to it.
-func GetInstance() *Singleton {
-	once.Do(func() {
-		instance = &Singleton{}
-	})
-	return instance
-}
+func GetInstance() *Singleton { _ = "STUB: not implemented"; return nil }

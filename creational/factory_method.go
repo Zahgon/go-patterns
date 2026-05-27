@@ -1,7 +1,6 @@
 package creational
 
 import (
-	"fmt"
 	"io"
 	"os"
 )
@@ -26,34 +25,18 @@ type Stooge interface {
 type larry struct {
 }
 
-func (s *larry) SlapStick() {
-	fmt.Fprint(outputWriter, "Larry: Poke eyes\n")
-}
+func (s *larry) SlapStick() { _ = "STUB: not implemented"; return }
 
 type moe struct {
 }
 
-func (s *moe) SlapStick() {
-	fmt.Fprint(outputWriter, "Moe: Slap head\n")
-}
+func (s *moe) SlapStick() { _ = "STUB: not implemented"; return }
 
 type curly struct {
 }
 
-func (s *curly) SlapStick() {
-	fmt.Fprint(outputWriter, "Curly: Suffer abuse\n")
-}
+func (s *curly) SlapStick() { _ = "STUB: not implemented"; return }
 
 // NewStooge creates new stooges given the stooge type.
 // Nil is returned if the stooge type is not recognised.
-func NewStooge(stooge StoogeType) Stooge {
-	switch stooge {
-	case Larry:
-		return &larry{}
-	case Moe:
-		return &moe{}
-	case Curly:
-		return &curly{}
-	}
-	return nil
-}
+func NewStooge(stooge StoogeType) Stooge { _ = "STUB: not implemented"; return *new(Stooge) }

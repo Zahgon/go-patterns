@@ -1,36 +1,35 @@
 package behavioral
 
-import (
-	"fmt"
-)
-
 // Machine defines a machine which can be swwitched on and off.
 type Machine struct {
 	current State
 }
 
 // NewMachine creates a new machine.
-func NewMachine() *Machine {
-	fmt.Fprintf(outputWriter, "Machine is ready.\n")
-	return &Machine{NewOFF()}
-}
+func NewMachine() *Machine { _ = "STUB: not implemented"; return nil }
 
 // setCurrent sets the current state of the machine.
 func (m *Machine) setCurrent(s State) {
-	m.current = s
+	_ = "STUB: not implemented"
+
+	// On pushes the on button.
+	return
 }
 
-// On pushes the on button.
 func (m *Machine) On() {
-	m.current.On(m)
+	_ = "STUB: not implemented"
+
+	// Off pushes the off button.
+	return
 }
 
-// Off pushes the off button.
 func (m *Machine) Off() {
-	m.current.Off(m)
+	_ = "STUB: not implemented"
+
+	// State describes the internal state of the machine.
+	return
 }
 
-// State describes the internal state of the machine.
 type State interface {
 	On(m *Machine)
 	Off(m *Machine)
@@ -42,19 +41,16 @@ type ON struct {
 
 // NewON creates a new ON state.
 func NewON() State {
-	return &ON{}
+	_ = "STUB: not implemented"
+
+	// On does nothing.
+	return *new(State)
 }
 
-// On does nothing.
-func (o *ON) On(m *Machine) {
-	fmt.Fprintf(outputWriter, "   already ON\n")
-}
+func (o *ON) On(m *Machine) { _ = "STUB: not implemented"; return }
 
 // Off switches the state from on to off.
-func (o *ON) Off(m *Machine) {
-	fmt.Fprintf(outputWriter, "   going from ON to OFF\n")
-	m.setCurrent(NewOFF())
-}
+func (o *ON) Off(m *Machine) { _ = "STUB: not implemented"; return }
 
 // OFF describes the off button state.
 type OFF struct {
@@ -62,16 +58,13 @@ type OFF struct {
 
 // NewOFF creates a new OFF state.
 func NewOFF() State {
-	return &OFF{}
+	_ = "STUB: not implemented"
+
+	// On switches the state from off to on.
+	return *new(State)
 }
 
-// On switches the state from off to on.
-func (o *OFF) On(m *Machine) {
-	fmt.Fprintf(outputWriter, "   going from OFF to ON\n")
-	m.setCurrent(NewON())
-}
+func (o *OFF) On(m *Machine) { _ = "STUB: not implemented"; return }
 
 // Off does nothing.
-func (o *OFF) Off(m *Machine) {
-	fmt.Fprintf(outputWriter, "   already OFF\n")
-}
+func (o *OFF) Off(m *Machine) { _ = "STUB: not implemented"; return }

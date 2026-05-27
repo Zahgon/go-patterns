@@ -13,10 +13,10 @@ type concretePrototype struct {
 
 // Name returns the name of the concreatePrototype.
 func (p *concretePrototype) Name() string {
-	return p.name
+	_ = "STUB: not implemented"
+
+	// Clone creates a cloned new instance of a concretePrototype1.
+	return ""
 }
 
-// Clone creates a cloned new instance of a concretePrototype1.
-func (p *concretePrototype) Clone() Prototype {
-	return &concretePrototype{p.name}
-}
+func (p *concretePrototype) Clone() Prototype { _ = "STUB: not implemented"; return *new(Prototype) }

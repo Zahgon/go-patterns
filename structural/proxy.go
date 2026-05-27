@@ -1,7 +1,6 @@
 package structural
 
 import (
-	"fmt"
 	"io"
 	"os"
 )
@@ -18,9 +17,7 @@ type Task struct {
 }
 
 // Execute implements the task.
-func (t *Task) Execute(taskType string) {
-	fmt.Fprint(outputWriter, "Performing task type: "+taskType)
-}
+func (t *Task) Execute(taskType string) { _ = "STUB: not implemented"; return }
 
 // ProxyTask represents a proxy task with re-routes tasks.
 type ProxyTask struct {
@@ -28,13 +25,7 @@ type ProxyTask struct {
 }
 
 // NewProxyTask creates a new instance of a ProxyTask.
-func NewProxyTask() *ProxyTask {
-	return &ProxyTask{task: &Task{}}
-}
+func NewProxyTask() *ProxyTask { _ = "STUB: not implemented"; return nil }
 
 // Execute intercepts the Execute command and re-routes it to the Task Execute command.
-func (t *ProxyTask) Execute(taskType string) {
-	if taskType == "Run" {
-		t.task.Execute(taskType)
-	}
-}
+func (t *ProxyTask) Execute(taskType string) { _ = "STUB: not implemented"; return }

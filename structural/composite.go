@@ -1,7 +1,5 @@
 package structural
 
-import "fmt"
-
 // Component describes the behavior that needs to be exercised uniformly
 // across all primitive and composite objects.
 type Component interface {
@@ -14,14 +12,10 @@ type Leaf struct {
 }
 
 // NewLeaf creates a new leaf.
-func NewLeaf(value int) *Leaf {
-	return &Leaf{value}
-}
+func NewLeaf(value int) *Leaf { _ = "STUB: not implemented"; return nil }
 
 // Traverse prints the value of the leaf.
-func (l *Leaf) Traverse() {
-	fmt.Printf("%v  ", l.value)
-}
+func (l *Leaf) Traverse() { _ = "STUB: not implemented"; return }
 
 // Composite describes a composite of components.
 type Composite struct {
@@ -29,18 +23,10 @@ type Composite struct {
 }
 
 // NewComposite creates a new composite.
-func NewComposite() *Composite {
-	return &Composite{make([]Component, 0)}
-}
+func NewComposite() *Composite { _ = "STUB: not implemented"; return nil }
 
 // Add adds a new component to the composite.
-func (c *Composite) Add(component Component) {
-	c.children = append(c.children, component)
-}
+func (c *Composite) Add(component Component) { _ = "STUB: not implemented"; return }
 
 // Traverse traverses the composites children.
-func (c *Composite) Traverse() {
-	for i := 0; i < len(c.children); i++ {
-		c.children[i].Traverse()
-	}
-}
+func (c *Composite) Traverse() { _ = "STUB: not implemented"; return }

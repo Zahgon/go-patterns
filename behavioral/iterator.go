@@ -24,22 +24,16 @@ type ArrayIterator struct {
 
 // Index returns the index of the current iterator.
 func (i *ArrayIterator) Index() int {
-	return i.index
+	_ = "STUB: not implemented"
+
+	// Value returns the current value of the iterator.
+	return 0
 }
 
-// Value returns the current value of the iterator.
-func (i *ArrayIterator) Value() interface{} {
-	return i.array[i.index]
-}
+func (i *ArrayIterator) Value() interface{} { _ = "STUB: not implemented"; return nil }
 
 // HasNext returns whether another next element exists.
-func (i *ArrayIterator) HasNext() bool {
-	return i.index+1 != len(i.array)
-}
+func (i *ArrayIterator) HasNext() bool { _ = "STUB: not implemented"; return false }
 
 // Next increments the iterator to point to the next element.
-func (i *ArrayIterator) Next() {
-	if i.HasNext() {
-		i.index++
-	}
-}
+func (i *ArrayIterator) Next() { _ = "STUB: not implemented"; return }

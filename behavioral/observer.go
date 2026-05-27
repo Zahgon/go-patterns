@@ -1,7 +1,6 @@
 package behavioral
 
 import (
-	"fmt"
 	"io"
 	"os"
 )
@@ -25,13 +24,14 @@ type observer struct {
 
 // NewEventObserver returns a new instance of an EventObserver.
 func NewEventObserver(name string) EventObserver {
-	return &observer{name}
+	_ = "STUB: not implemented"
+	return *
+
+	// OnNotify logs the event being notified on.
+	new(EventObserver)
 }
 
-// OnNotify logs the event being notified on.
-func (o *observer) OnNotify(event Event) {
-	fmt.Fprintf(outputWriter, "observer '%s' received event '%s'\n", o.name, event.id)
-}
+func (o *observer) OnNotify(event Event) { _ = "STUB: not implemented"; return }
 
 // EventNotifier describes an interface for registering and de-registering observers to
 // be notified when an event occurs.
@@ -48,26 +48,17 @@ type eventNotifer struct {
 
 // NewEventNotifier returns a new instance of an EventNotifier.
 func NewEventNotifier() EventNotifier {
-	return &eventNotifer{}
+	_ = "STUB: not implemented"
+	return *
+
+	// Register registers a new observer for notifying on.
+	new(EventNotifier)
 }
 
-// Register registers a new observer for notifying on.
-func (e *eventNotifer) Register(obs EventObserver) {
-	e.observers = append(e.observers, obs)
-}
+func (e *eventNotifer) Register(obs EventObserver) { _ = "STUB: not implemented"; return }
 
 // Deregister de-registers an observer for notifying on.
-func (e *eventNotifer) Deregister(obs EventObserver) {
-	for i := 0; i < len(e.observers); i++ {
-		if obs == e.observers[i] {
-			e.observers = append(e.observers[:i], e.observers[i+1:]...)
-		}
-	}
-}
+func (e *eventNotifer) Deregister(obs EventObserver) { _ = "STUB: not implemented"; return }
 
 // Notify notifies all observers on an event.
-func (e *eventNotifer) Notify(event Event) {
-	for i := 0; i < len(e.observers); i++ {
-		e.observers[i].OnNotify(event)
-	}
-}
+func (e *eventNotifer) Notify(event Event) { _ = "STUB: not implemented"; return }

@@ -1,9 +1,5 @@
 package behavioral
 
-import (
-	"strings"
-)
-
 // Expression represents an expression to evaluate.
 type Expression interface {
 	Interpret(variables map[string]Expression) int
@@ -16,19 +12,19 @@ type Integer struct {
 
 // Interpret returns the integer representation of the number.
 func (n *Integer) Interpret(variables map[string]Expression) int {
-	return n.integer
+	_ = "STUB: not implemented"
+
+	// Plus represents the addition operation.
+	return 0
 }
 
-// Plus represents the addition operation.
 type Plus struct {
 	leftOperand  Expression
 	rightOperand Expression
 }
 
 // Interpret interprets by adding the left and right variables.
-func (p *Plus) Interpret(variables map[string]Expression) int {
-	return p.leftOperand.Interpret(variables) + p.rightOperand.Interpret(variables)
-}
+func (p *Plus) Interpret(variables map[string]Expression) int { _ = "STUB: not implemented"; return 0 }
 
 // Minus represents the subtraction operation.
 type Minus struct {
@@ -37,9 +33,7 @@ type Minus struct {
 }
 
 // Interpret interprets by subtracting the right from left variables.
-func (m *Minus) Interpret(variables map[string]Expression) int {
-	return m.leftOperand.Interpret(variables) - m.rightOperand.Interpret(variables)
-}
+func (m *Minus) Interpret(variables map[string]Expression) int { _ = "STUB: not implemented"; return 0 }
 
 // Variable represents a variable.
 type Variable struct {
@@ -48,11 +42,8 @@ type Variable struct {
 
 // Interpret looks up the variable value and returns it, if not found returns zero.
 func (v *Variable) Interpret(variables map[string]Expression) int {
-	value, found := variables[v.name]
-	if !found {
-		return 0
-	}
-	return value.Interpret(variables)
+	_ = "STUB: not implemented"
+	return 0
 }
 
 // Evaluator evaluates the expression.
@@ -61,31 +52,12 @@ type Evaluator struct {
 }
 
 // NewEvaluator creates a new Evaluator.
-func NewEvaluator(expression string) *Evaluator {
-	expressionStack := new(Stack)
-	for _, token := range strings.Split(expression, " ") {
-		switch token {
-		case "+":
-			right := expressionStack.Pop().(Expression)
-			left := expressionStack.Pop().(Expression)
-			subExpression := &Plus{left, right}
-			expressionStack.Push(subExpression)
-		case "-":
-			right := expressionStack.Pop().(Expression)
-			left := expressionStack.Pop().(Expression)
-			subExpression := &Minus{left, right}
-			expressionStack.Push(subExpression)
-		default:
-			expressionStack.Push(&Variable{token})
-		}
-	}
-	syntaxTree := expressionStack.Pop().(Expression)
-	return &Evaluator{syntaxTree}
-}
+func NewEvaluator(expression string) *Evaluator { _ = "STUB: not implemented"; return nil }
 
 // Interpret interprets the expression syntax tree.
 func (e *Evaluator) Interpret(context map[string]Expression) int {
-	return e.syntaxTree.Interpret(context)
+	_ = "STUB: not implemented"
+	return 0
 }
 
 // Node represents a node in the stack.
@@ -101,18 +73,7 @@ type Stack struct {
 }
 
 // Push pushes a new value into the stack.
-func (s *Stack) Push(value interface{}) {
-	s.top = &Node{value, s.top}
-	s.size++
-}
+func (s *Stack) Push(value interface{}) { _ = "STUB: not implemented"; return }
 
 // Pop pops a value out the stack.
-func (s *Stack) Pop() interface{} {
-	if s.size == 0 {
-		return nil
-	}
-	value := s.top.value
-	s.top = s.top.next
-	s.size--
-	return value
-}
+func (s *Stack) Pop() interface{} { _ = "STUB: not implemented"; return nil }

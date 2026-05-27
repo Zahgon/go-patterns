@@ -16,15 +16,20 @@ type Director struct {
 
 // NewDirector creates a new Director with a specified Builder.
 func NewDirector(builder Builder) Director {
-	return Director{builder}
+	_ = "STUB: not implemented"
+	return *
+
+	// Construct builds the product from a series of steps.
+	new(Director)
 }
 
-// Construct builds the product from a series of steps.
 func (d *Director) Construct() {
-	d.builder.Build()
+	_ = "STUB: not implemented"
+
+	// Builder is an interface for building.
+	return
 }
 
-// Builder is an interface for building.
 type Builder interface {
 	Build()
 }
@@ -35,21 +40,24 @@ type ConcreteBuilder struct {
 }
 
 // NewConcreteBuilder returns a new Builder.
-func NewConcreteBuilder() ConcreteBuilder {
-	return ConcreteBuilder{false}
-}
+func NewConcreteBuilder() ConcreteBuilder { _ = "STUB: not implemented"; return *new(ConcreteBuilder) }
 
 // Build builds the product.
 func (b *ConcreteBuilder) Build() {
-	b.built = true
+	_ = "STUB: not implemented"
+
+	// GetResult returns the Product which has been build during the Build step.
+	return
 }
 
-// GetResult returns the Product which has been build during the Build step.
 func (b *ConcreteBuilder) GetResult() Product {
-	return Product{b.built}
+	_ = "STUB: not implemented"
+	return *
+
+	// Product describes the product to be built.
+	new(Product)
 }
 
-// Product describes the product to be built.
 type Product struct {
 	Built bool
 }

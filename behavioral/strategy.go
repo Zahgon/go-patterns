@@ -1,7 +1,5 @@
 package behavioral
 
-import "fmt"
-
 // Strategy defines the interface for the strategy to execute.
 type Strategy interface {
 	Execute()
@@ -13,13 +11,14 @@ type strategyA struct {
 
 // NewStrategyA creates a new instance of strategy A.
 func NewStrategyA() Strategy {
-	return &strategyA{}
+	_ = "STUB: not implemented"
+	return *
+
+	// Execute executes strategy A.
+	new(Strategy)
 }
 
-// Execute executes strategy A.
-func (s *strategyA) Execute() {
-	fmt.Fprintf(outputWriter, "executing strategy A\n")
-}
+func (s *strategyA) Execute() { _ = "STUB: not implemented"; return }
 
 // strategyB defines an implementation of a Strategy to execute.
 type strategyB struct {
@@ -27,13 +26,14 @@ type strategyB struct {
 
 // NewStrategyB creates a new instance of strategy B.
 func NewStrategyB() Strategy {
-	return &strategyB{}
+	_ = "STUB: not implemented"
+	return *
+
+	// Execute executes strategy B.
+	new(Strategy)
 }
 
-// Execute executes strategy B.
-func (s *strategyB) Execute() {
-	fmt.Fprintf(outputWriter, "executing strategy B\n")
-}
+func (s *strategyB) Execute() { _ = "STUB: not implemented"; return }
 
 // Context defines a context for executing a strategy.
 type Context struct {
@@ -42,15 +42,13 @@ type Context struct {
 
 // NewContext creates a new instance of a context.
 func NewContext() *Context {
-	return &Context{}
+	_ = "STUB: not implemented"
+
+	// SetStrategy sets the strategy to execute for this context.
+	return nil
 }
 
-// SetStrategy sets the strategy to execute for this context.
-func (c *Context) SetStrategy(strategy Strategy) {
-	c.strategy = strategy
-}
+func (c *Context) SetStrategy(strategy Strategy) { _ = "STUB: not implemented"; return }
 
 // Execute executes the strategy.
-func (c *Context) Execute() {
-	c.strategy.Execute()
-}
+func (c *Context) Execute() { _ = "STUB: not implemented"; return }

@@ -7,9 +7,7 @@ type Flyweight struct {
 }
 
 // NewFlyweight creates a new Flyweight object.
-func NewFlyweight(name string) *Flyweight {
-	return &Flyweight{name}
-}
+func NewFlyweight(name string) *Flyweight { _ = "STUB: not implemented"; return nil }
 
 // FlyweightFactory is a factory for creating and storing flyweights.
 type FlyweightFactory struct {
@@ -17,17 +15,11 @@ type FlyweightFactory struct {
 }
 
 // NewFlyweightFactory creates a new FlyweightFactory.
-func NewFlyweightFactory() *FlyweightFactory {
-	return &FlyweightFactory{pool: make(map[string]*Flyweight)}
-}
+func NewFlyweightFactory() *FlyweightFactory { _ = "STUB: not implemented"; return nil }
 
 // GetFlyweight gets or creates a flyweight depending on whether a
 // flyweight of the same name already exists.
 func (f *FlyweightFactory) GetFlyweight(name string) *Flyweight {
-	flyweight, okay := f.pool[name]
-	if !okay {
-		flyweight = NewFlyweight(name)
-		f.pool[name] = flyweight
-	}
-	return flyweight
+	_ = "STUB: not implemented"
+	return nil
 }

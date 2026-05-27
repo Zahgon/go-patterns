@@ -1,9 +1,5 @@
 package behavioral
 
-import (
-	"fmt"
-)
-
 // WorkerInterface defines an interface for a worker.
 type WorkerInterface interface {
 	GetUp()
@@ -22,55 +18,35 @@ type Worker struct {
 
 // NewWorker returns a new Worker.
 func NewWorker(w WorkerInterface) *Worker {
-	return &Worker{w}
+	_ = "STUB: not implemented"
+
+	// DailyRoutine is the template method for printing the workers daily routine.
+	return nil
 }
 
-// DailyRoutine is the template method for printing the workers daily routine.
-func (w *Worker) DailyRoutine() {
-	w.GetUp()
-	w.EatBreakfast()
-	w.GoToWork()
-	w.Work()
-	w.ReturnHome()
-	w.Relax()
-	w.Sleep()
-}
+func (w *Worker) DailyRoutine() { _ = "STUB: not implemented"; return }
 
 // PostMan is a worker.
 type PostMan struct {
 }
 
 // GetUp prints what the postman does to get up.
-func (w *PostMan) GetUp() {
-	fmt.Fprintf(outputWriter, "Getting up\n")
-}
+func (w *PostMan) GetUp() { _ = "STUB: not implemented"; return }
 
 // EatBreakfast prints what the postman does to eat breakfast.
-func (w *PostMan) EatBreakfast() {
-	fmt.Fprintf(outputWriter, "Eating pop tarts\n")
-}
+func (w *PostMan) EatBreakfast() { _ = "STUB: not implemented"; return }
 
 // GoToWork prints what the postman does to get to work.
-func (w *PostMan) GoToWork() {
-	fmt.Fprintf(outputWriter, "Cycle to work\n")
-}
+func (w *PostMan) GoToWork() { _ = "STUB: not implemented"; return }
 
 // Work prints what the postman does to work.
-func (w *PostMan) Work() {
-	fmt.Fprintf(outputWriter, "Post letters\n")
-}
+func (w *PostMan) Work() { _ = "STUB: not implemented"; return }
 
 // ReturnHome prints what the postman does to get home.
-func (w *PostMan) ReturnHome() {
-	fmt.Fprintf(outputWriter, "Cycle home\n")
-}
+func (w *PostMan) ReturnHome() { _ = "STUB: not implemented"; return }
 
 // Relax prints what the postman does to relax.
-func (w *PostMan) Relax() {
-	fmt.Fprintf(outputWriter, "Collect stamps\n")
-}
+func (w *PostMan) Relax() { _ = "STUB: not implemented"; return }
 
 // Sleep prints what the postman does to sleep.
-func (w *PostMan) Sleep() {
-	fmt.Fprintf(outputWriter, "Zzzzzzz\n")
-}
+func (w *PostMan) Sleep() { _ = "STUB: not implemented"; return }
